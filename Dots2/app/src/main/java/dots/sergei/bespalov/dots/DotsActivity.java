@@ -21,7 +21,7 @@ public class DotsActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dots);
+        setContentView(R.layout.activity_layout);
         final DotsView dotsView = (DotsView)findViewById(R.id.dotsView);
         dotsView.setDots(dots);
         final EditText t1 = (EditText)findViewById(R.id.text1);

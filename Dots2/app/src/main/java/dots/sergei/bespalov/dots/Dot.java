@@ -4,6 +4,7 @@ package dots.sergei.bespalov.dots;
  * simple dot...
  */
 public class Dot {
+    public static final  int DIAMETER = 20;
     /**
      * coordinate axis x
      */

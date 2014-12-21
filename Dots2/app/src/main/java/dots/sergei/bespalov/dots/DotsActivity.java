@@ -55,6 +55,7 @@ public class DotsActivity extends ActionBarActivity {
                         Color.GREEN);
             }
         });
+        dotsView.setOnTouchListener(new TrackingTouchListener(dots));
     }
 
 

@@ -55,6 +55,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         class="dots.sergei.bespalov.dots.DotsView"
-        android:id="@+id/dotsView" />
+        android:id="@+id/dotsView"
+        android:focusable="true" />
 
 </LinearLayout>

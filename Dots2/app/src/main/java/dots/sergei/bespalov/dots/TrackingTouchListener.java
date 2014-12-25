@@ -40,29 +40,33 @@ public class TrackingTouchListener implements View.OnTouchListener {
                 n = event.getHistorySize();
                 for (Integer i : tracks) {
                     idx = event.findPointerIndex(i.intValue());
-                    for (int j = 0; j < n; j++) {
-                        addDot(
-                                dots,
-                                event.getHistoricalX(idx, j),
-                                event.getHistoricalY(idx, j),
-                                event.getHistoricalPressure(idx, j),
-                                event.getHistoricalSize(idx, j)
-                        );
+                    if (idx < event.getPointerCount()) {
+                        for (int j = 0; j < n; j++) {
+                            addDot(
+                                    dots,
+                                    event.getHistoricalX(idx, j),
+                                    event.getHistoricalY(idx, j),
+                                    event.getHistoricalPressure(idx, j),
+                                    event.getHistoricalSize(idx, j)
+                            );
+                        }
                     }
                 }
                 break;
             default:
                 return false;
         }
-        for (Integer i: tracks){
+        for (Integer i : tracks) {
             idx = event.findPointerIndex(i.intValue());
-            addDot(
-                    dots,
-                    event.getX(idx),
-                    event.getY(idx),
-                    event.getPressure(idx),
-                    event.getSize(idx)
-            );
+            if (idx < event.getPointerCount()) {
+                addDot(
+                        dots,
+                        event.getX(idx),
+                        event.getY(idx),
+                        event.getPressure(idx),
+                        event.getSize(idx)
+                );
+            }
         }
         return true;
     }

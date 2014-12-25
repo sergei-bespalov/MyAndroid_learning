@@ -29,6 +29,7 @@ public class DotsView extends View {
         super(context, attrs);
         setFocusableInTouchMode(true);
     }
+
     /**
      * @param context
      * @param attrs
@@ -38,22 +39,25 @@ public class DotsView extends View {
         super(context, attrs, defStyle);
         setFocusableInTouchMode(true);
     }
+
     /**
      * @param dots
      */
-    public void setDots(Dots dots){
+    public void setDots(Dots dots) {
         this.dots = dots;
     }
+
     /**
-     *
      * @param canvas
      */
-    protected void onDraw(Canvas canvas){
+    protected void onDraw(Canvas canvas) {
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(hasFocus() ? Color.BLUE : Color.GRAY);
-        canvas.drawRect(0, 0, getWidth() - 1, getHeight() -1, paint);
-        if (null == dots) { return; }
+        canvas.drawRect(0, 0, getWidth() - 1, getHeight() - 1, paint);
+        if (null == dots) {
+            return;
+        }
         paint.setStyle(Paint.Style.FILL);
         for (Dot dot : dots.getDots()) {
             paint.setColor(dot.getColor());

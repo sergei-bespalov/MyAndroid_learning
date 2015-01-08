@@ -1,5 +1,7 @@
 package sergei.bespalov.fragment;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,11 +9,17 @@ import android.view.MenuItem;
 
 
 public class FragmentActivity extends ActionBarActivity {
-
+    String FRAG1_TAG = "FRAG1_TAG";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
+        FragmentManager fM = getFragmentManager();
+        FragmentTransaction xact = fM.beginTransaction();
+        if (null == fM.findFragmentByTag(FRAG1_TAG)) {
+            xact.add(R.id.date_time, new DataTime(), FRAG1_TAG);
+        }
+        xact.commit();
     }
 
 

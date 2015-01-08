@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -17,23 +15,35 @@ import java.util.Date;
  */
 public class DataTime extends Fragment {
     private String time;
+    private String TAG_DATE_TIME = "datatime";
 
     /**
      * this method called when fragment created
+     *
      * @param state
      */
-    public void onCreate(Bundle state){
+    @Override
+    public void onCreate(Bundle state) {
         super.onCreate(state);
+        if (null != state) {
+            time = state.getString(TAG_DATE_TIME);
+        }
         if (null == time) {
             time = new SimpleDateFormat("d MM yyyy HH:mm:ss").format(new Date());
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle b){
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle b) {
         View view = inflater.inflate(R.layout.data_time, container, false);
-        ((TextView)view.findViewById(R.id.last_view_time)).setText(time);
+        ((TextView) view.findViewById(R.id.last_view_time)).setText(time);
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        state.putString(TAG_DATE_TIME, time);
     }
 
 }

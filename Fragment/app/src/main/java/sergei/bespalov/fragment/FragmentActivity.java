@@ -6,20 +6,48 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.util.Date;
 
 
 public class FragmentActivity extends ActionBarActivity {
-    String FRAG1_TAG = "FRAG1_TAG";
+    static String FRAG1_TAG = "FRAG1_TAG";
+    static String FRAG2_TAG = "FRAG2_TAG";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_fragment);
+
         FragmentManager fM = getFragmentManager();
         FragmentTransaction xact = fM.beginTransaction();
+
         if (null == fM.findFragmentByTag(FRAG1_TAG)) {
-            xact.add(R.id.date_time, new DataTime(), FRAG1_TAG);
+            xact.add(
+                    R.id.date_time,
+                    DataTime.createInstance(new Date()),
+                    FRAG1_TAG
+            );
         }
+
+        if (null == fM.findFragmentByTag(FRAG2_TAG)) {
+            xact.add(
+                    R.id.date_time_2,
+                    DataTime.createInstance(new Date()),
+                    FRAG2_TAG
+            );
+        }
+
         xact.commit();
+
+        findViewById(R.id.update_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                update();
+            }
+        });
     }
 
 
@@ -43,5 +71,30 @@ public class FragmentActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * update displayed date
+     */
+    void update(){
+        Date time = new Date();
+
+        FragmentTransaction xact = getFragmentManager().beginTransaction();
+
+        xact.replace(
+                R.id.date_time,
+                DataTime.createInstance(time),
+                FRAG1_TAG);
+
+        xact.replace(
+                R.id.date_time_2,
+                DataTime.createInstance(time),
+                FRAG1_TAG
+        );
+
+        xact.addToBackStack(null);
+        xact.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+
+        xact.commit();
     }
 }

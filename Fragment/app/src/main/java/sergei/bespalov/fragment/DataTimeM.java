@@ -35,7 +35,7 @@ public class DataTimeM extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle b) {
-        View view = inflater.inflate(R.layout.data_time, container, false);
+        View view = inflater.inflate(R.layout.date_time, container, false);
         ((TextView) view.findViewById(R.id.last_view_time)).setText(time);
         return view;
     }

@@ -11,13 +11,14 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/primary_light"
-        android:text="0.0000"
-        android:textSize="32dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:gravity="top|right"
         android:elevation="12dp"
-        android:textColor="@color/primary_text"/>
+        android:gravity="top|right"
+        android:paddingRight="16dp"
+        android:paddingTop="16dp"
+        android:text="0.0000"
+        android:textColor="@color/primary_text"
+        android:textSize="32dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -27,221 +28,238 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="@integer/main_button_wight"
-            android:background="@color/primary">
+            android:background="@color/primary"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/button_1"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_1"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_4"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_4"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_7"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_7"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_comma"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_comma"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="@integer/main_button_wight"
-            android:background="@color/primary">
+            android:background="@color/primary"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/button_2"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_2"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_5"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_5"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_8"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_8"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_0"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_0"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="@integer/main_button_wight"
-            android:background="@color/primary">
+            android:background="@color/primary"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/button_3"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
-                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/ripple"
                 android:text="@string/button_3"
-                android:textSize="@dimen/button_text_size"
-                android:textColor="@color/primary_light"/>
+                android:textColor="@color/primary_light"
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_6"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_6"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_9"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_9"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
             <Button
                 android:id="@+id/button_result"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_result"
-                android:textSize="@dimen/button_text_size"
                 android:textColor="@color/primary_light"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_text_size" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="@integer/second_button_wight"
-            android:background="@color/primary_dark">
+            android:background="@color/primary_dark"
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/button_clear"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_clear"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/button_second_text_size"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_second_text_size" />
 
             <Button
                 android:id="@+id/button_clear_last"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_clear_last"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/button_second_text_size"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_second_text_size" />
 
             <Button
                 android:id="@+id/button_plus"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_plus"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/button_second_text_size"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_second_text_size" />
 
             <Button
                 android:id="@+id/button_minus"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_minus"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/button_second_text_size"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_second_text_size" />
 
             <Button
                 android:id="@+id/button_multi"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_multi"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/button_second_text_size"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_second_text_size" />
 
             <Button
                 android:id="@+id/button_div"
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="@integer/main_button_wight"
+                android:background="@drawable/ripple"
                 android:text="@string/button_div"
                 android:textColor="@color/primary_light"
-                android:textSize="@dimen/button_second_text_size"
-                style="?android:attr/borderlessButtonStyle"/>
+                android:textSize="@dimen/button_second_text_size" />
 
         </LinearLayout>
 
     </LinearLayout>
-    
 
 
 </LinearLayout>

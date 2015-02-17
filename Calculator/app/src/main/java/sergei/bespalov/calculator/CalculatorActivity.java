@@ -67,15 +67,21 @@ public class CalculatorActivity extends ActionBarActivity implements View.OnClic
             case R.id.button_7:
             case R.id.button_8:
             case R.id.button_9:
-            case R.id.button_comma:
                 add(id);
+                break;
+            case R.id.button_comma:
                 break;
             case R.id.button_plus:
             case R.id.button_minus:
+            case R.id.button_div:
+            case R.id.button_multi:
                 setOperation(id);
                 break;
             case R.id.button_clear:
                 clear();
+                break;
+            case R.id.button_clear_last:
+                clearLast();
                 break;
             case R.id.button_result:
                 result();
@@ -109,6 +115,19 @@ public class CalculatorActivity extends ActionBarActivity implements View.OnClic
         display.setText(displayDefault);
     }
 
+    protected void clearLast(){
+        if(isRight){
+            rightNumber = "";
+            displayInfo = leftNumber + "\n"+operation.getSymbol() + "\n";
+            display.setText(displayInfo);
+        }else {
+            leftNumber = "";
+            displayInfo = "";
+            display.setText(displayDefault);
+        }
+
+    }
+
     /**
      * add to display text
      *
@@ -117,14 +136,8 @@ public class CalculatorActivity extends ActionBarActivity implements View.OnClic
     protected void add(int id) {
         Button b = (Button) findViewById(id);
         if (isRight) {
-            if (id == R.id.button_comma && rightNumber.contains(",")) {
-                return;
-            }
             rightNumber = rightNumber + b.getText();
         } else {
-            if (id == R.id.button_comma && leftNumber.contains(",")) {
-                return;
-            }
             leftNumber = leftNumber + b.getText();
         }
         displayInfo =displayInfo + b.getText();
@@ -137,12 +150,18 @@ public class CalculatorActivity extends ActionBarActivity implements View.OnClic
      * @param id button id
      */
     protected void setOperation(int id) {
-        if (operation != null || leftNumber.equals("")) {
-            result();
-            return;
+        if (leftNumber.equals("")) return;
+        if (operation != null) {
+            leftNumber = operation.execute(leftNumber,rightNumber);
+            rightNumber = "";
+            isRight = true;
+            displayInfo = leftNumber;
+            operation = null;
         }
         if (id == R.id.button_plus) operation = new Addition();
         if (id == R.id.button_minus) operation = new Subtraction();
+        if (id == R.id.button_multi) operation = new Multiplication();
+        if (id == R.id.button_div) operation = new Division();
         isRight = true;
         displayInfo = displayInfo + "\n" + operation.getSymbol() + "\n";
         display.setText(displayInfo);
@@ -152,37 +171,23 @@ public class CalculatorActivity extends ActionBarActivity implements View.OnClic
      * set listeners
      */
     protected void setOnClickListeners() {
-        Button tmp = (Button) findViewById(R.id.button_0);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_0);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_1);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_2);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_3);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_4);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_5);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_6);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_7);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_8);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_9);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_comma);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_minus);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_plus);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_clear);
-        tmp.setOnClickListener(this);
-        tmp = (Button) findViewById(R.id.button_result);
-        tmp.setOnClickListener(this);
+        findViewById(R.id.button_0).setOnClickListener(this);
+        findViewById(R.id.button_1).setOnClickListener(this);
+        findViewById(R.id.button_2).setOnClickListener(this);
+        findViewById(R.id.button_3).setOnClickListener(this);
+        findViewById(R.id.button_4).setOnClickListener(this);
+        findViewById(R.id.button_5).setOnClickListener(this);
+        findViewById(R.id.button_6).setOnClickListener(this);
+        findViewById(R.id.button_7).setOnClickListener(this);
+        findViewById(R.id.button_8).setOnClickListener(this);
+        findViewById(R.id.button_9).setOnClickListener(this);
+        findViewById(R.id.button_comma).setOnClickListener(this);
+        findViewById(R.id.button_clear).setOnClickListener(this);
+        findViewById(R.id.button_clear_last).setOnClickListener(this);
+        findViewById(R.id.button_multi).setOnClickListener(this);
+        findViewById(R.id.button_div).setOnClickListener(this);
+        findViewById(R.id.button_minus).setOnClickListener(this);
+        findViewById(R.id.button_plus).setOnClickListener(this);
+        findViewById(R.id.button_result).setOnClickListener(this);
     }
 }

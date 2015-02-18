@@ -18,7 +18,7 @@
         android:paddingTop="16dp"
         android:text="0.0000"
         android:textColor="@color/primary_text"
-        android:textSize="32dp" />
+        android:textSize="@dimen/display_text" />
 
     <LinearLayout
         android:layout_width="match_parent"

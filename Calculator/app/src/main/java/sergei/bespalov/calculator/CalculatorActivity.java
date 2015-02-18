@@ -97,8 +97,11 @@ public class CalculatorActivity extends ActionBarActivity implements View.OnClic
     protected void result() {
         if (operation == null) return;
         String result = operation.execute(leftNumber, rightNumber);
-        needClear = true;
-        displayInfo = displayInfo.replace("\n", "") + "=" + result;
+        operation = null;
+        isRight = false;
+        leftNumber = result;
+        rightNumber = "";
+        displayInfo = leftNumber;
         display.setText(displayInfo);
     }
 
@@ -152,11 +155,15 @@ public class CalculatorActivity extends ActionBarActivity implements View.OnClic
     protected void setOperation(int id) {
         if (leftNumber.equals("")) return;
         if (operation != null) {
-            leftNumber = operation.execute(leftNumber,rightNumber);
-            rightNumber = "";
-            isRight = true;
-            displayInfo = leftNumber;
-            operation = null;
+            if (!rightNumber.equals("")) {
+                leftNumber = operation.execute(leftNumber, rightNumber);
+                rightNumber = "";
+                isRight = true;
+                displayInfo = leftNumber;
+                operation = null;
+            }else {
+                displayInfo = leftNumber;
+            }
         }
         if (id == R.id.button_plus) operation = new Addition();
         if (id == R.id.button_minus) operation = new Subtraction();

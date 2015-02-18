@@ -16,7 +16,7 @@ public class Division implements Operation {
     public String execute(String arg1, String arg2) {
         Integer x = Integer.parseInt(arg1);
         Integer y = Integer.parseInt(arg2);
-        Double z = (double)x/y;
+        Integer z = x/y;
         return z.toString();
     }
 }

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ActivityTransition</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="create_button">Создать пользователя</string>
+    <string name="name_label">Имя</string>
+    <string name="age_label">Возраст</string>
+    <string name="address_label">Адрес</string>
+    <string name="email_label">e-mail</string>
+    <string name="save_button">Сохранить</string>
+    <string name="send_button">Отправить</string>
+</resources>

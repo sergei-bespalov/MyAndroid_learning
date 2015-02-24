@@ -1,9 +1,12 @@
 package com.sergei.cars;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -18,9 +21,21 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fillCars();
-        ListView listView = (ListView) findViewById(R.id.list);
+        final ListView listView = (ListView) findViewById(R.id.list);
         CarsAdapter adapter = new CarsAdapter(this, R.layout.list_item_car, cars);
         listView.setAdapter(adapter);
+        final MainActivity thisActivity = this;
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Car car = (Car) listView.getItemAtPosition(position);
+                Intent intent = new Intent(thisActivity, DetailActivity.class);
+                intent.putExtra(DetailActivity.CAR_NAME,car.name);
+                intent.putExtra(DetailActivity.CAR_MAX_SPEED, String.valueOf(car.maxSpeed));
+                intent.putExtra(DetailActivity.PRICE, String.valueOf(car.price));
+                startActivity(intent);
+            }
+        });
 
     }
 

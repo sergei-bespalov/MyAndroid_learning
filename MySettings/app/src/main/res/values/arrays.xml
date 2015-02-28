@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_list">
+        <item>some item 1</item>
+        <item>some item 2</item>
+        <item>some item 3</item>
+        <item>some item 4</item>
+    </string-array>
+    <string-array name="pref_list_VALUES">
+        <item>I1</item>
+        <item>I2</item>
+        <item>I3</item>
+        <item>I4</item>
+    </string-array>
+</resources>

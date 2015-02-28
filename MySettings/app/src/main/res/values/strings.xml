@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MySettings</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="category_1">Settings Category №1</string>
+    <string name="category_2">Settings Category №2</string>
+    <string name="checkbox_preference">Checkbox Preference</string>
+    <string name="list_preference">List Preference</string>
+    <string name="edit_text_preference">Edit Text Preference</string>
+    <string name="rington_preference">Rington Preference</string>
+    <string name="preference_screen">Preference Screen</string>
+    <string name="edit_text_preference_2">Edit Text Preference 2</string>
+    <string name="preference">Preference</string>
+    <string name="prefname_1">settings group 1</string>
+    <string name="prefname_2">settings group 2</string>
+    <string name="prefdesc_1">some settings 1</string>
+    <string name="prefdesc_2">some settings 2</string>
+    <string name="list_dialog_title">List Dialog</string>
+
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/category_1">
+        <CheckBoxPreference/>
+        <CheckBoxPreference
+            android:title="@string/checkbox_preference"
+            android:summary="this pref can be true or false"/>
+        <ListPreference
+            android:title="@string/list_preference"
+            android:summary="this allows you to select from a list"
+            android:entries="@array/pref_list"
+            android:entryValues="@array/pref_list_VALUES"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/category_2">
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

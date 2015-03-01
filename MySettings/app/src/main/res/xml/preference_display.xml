@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:title="@string/category_1">
-        <CheckBoxPreference/>
+    <PreferenceCategory android:title="@string/category_1">
         <CheckBoxPreference
-            android:title="@string/checkbox_preference"
-            android:summary="this pref can be true or false"/>
+            android:key="checkbox1"
+            android:summary="this pref can be true or false"
+            android:title="@string/checkbox_preference" />
         <ListPreference
-            android:title="@string/list_preference"
-            android:summary="this allows you to select from a list"
             android:entries="@array/pref_list"
-            android:entryValues="@array/pref_list_VALUES"/>
+            android:entryValues="@array/pref_list_VALUES"
+            android:key="pref_list"
+            android:summary="this allows you to select from a list"
+            android:title="@string/list_preference" />
     </PreferenceCategory>
-    <PreferenceCategory
-        android:title="@string/category_2">
-
+    <PreferenceCategory android:title="@string/category_2">
+        <EditTextPreference
+            android:key="pref_text"
+            android:summary="this allows you to set text pref"
+            android:title="@string/edit_text_preference" />
+        <RingtonePreference
+            android:key="pref_ring"
+            android:showDefault="true"
+            android:showSilent="false"
+            android:summary="this allows you to chose ringtone"
+            android:title="@string/ringtone_preference" />
+        <PreferenceScreen
+            android:summary="open new preference screen"
+            android:title="@string/preference_screen">
+            <EditTextPreference
+                android:key="pref_text_2"
+                android:summary="this allows you to set text pref"
+                android:title="@string/edit_text_preference_2" />
+        </PreferenceScreen>
+        <Preference
+            android:key="pref_some"
+            android:summary="some preference"
+            android:title="@string/preference" />
     </PreferenceCategory>
-
 </PreferenceScreen>

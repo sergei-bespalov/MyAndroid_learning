@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16sp"/>
-    <TextViewi
+    <TextView
         android:id="@+id/text_vin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

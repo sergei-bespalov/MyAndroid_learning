@@ -29,7 +29,7 @@ public class CarsAdapter extends ArrayAdapter<Car> {
             ViewHolder holder = new ViewHolder();
 
             holder.name = (TextView) view.findViewById(R.id.text_car);
-            holder.name = (TextView) view.findViewById(R.id.text_vin);
+            holder.vin = (TextView) view.findViewById(R.id.text_vin);
             view.setTag(holder);
         }else {
             view = convertView;

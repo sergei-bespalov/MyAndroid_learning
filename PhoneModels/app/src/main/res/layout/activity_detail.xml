@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/const_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_toRightOf="@id/const_name"
+        android:paddingLeft="8sp"
+        tools:text="iPhone 6"/>
+
+    <TextView
+        android:id="@+id/const_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating:"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/const_name"/>
+
+    <TextView
+        android:id="@+id/text_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:layout_below="@id/text_name"
+        android:layout_toRightOf="@id/const_rating"
+        android:paddingLeft="8sp"
+        tools:text="5.5"/>
+
+    <TextView
+        android:id="@+id/const_os"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OS:"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/const_rating"/>
+
+    <TextView
+        android:id="@+id/text_os"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/const_os"
+        android:layout_below="@id/text_rating"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="8sp"
+        tools:text="iOS"/>
+
+    <TextView
+        android:id="@+id/const_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price:"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/const_os"/>
+
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_below="@id/text_os"
+        android:layout_toRightOf="@id/const_price"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="8sp"
+        tools:text="1 000 000"
+        />
+
+</RelativeLayout>

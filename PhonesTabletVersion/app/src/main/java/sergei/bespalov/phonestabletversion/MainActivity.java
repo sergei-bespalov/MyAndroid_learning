@@ -27,6 +27,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -39,17 +40,26 @@ public class MainActivity extends ActionBarActivity {
     static ListView mListView;
     private final static String TAG = "MainActivity";
     private final static String URL = "https://docs.google.com/uc?authuser=0&id=0BxyiZJDI1SglOU9sWXpLRlNsX1k&export=download";
-    private DetailFragment fragment;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragment = (DetailFragment) fragmentManager.findFragmentById(R.id.detail_fragment);
+    public void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG,"MainActivity onCrate");
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        new GetDataTask().execute();
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                updateDetails(position);
+            }
+        });
         Log.d(TAG,"MainActivity Created");
     }
 
+
     private void updateDetails(Integer position){
+        FragmentManager fragmentManager = MainActivity.this.getSupportFragmentManager();
+        DetailFragment fragment = (DetailFragment) fragmentManager.findFragmentById(R.id.detail_fragment);
         if(fragment != null ){
             fragment.update(position);
         }
@@ -64,6 +74,7 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         protected List<Phone> doInBackground(Void... params) {
+            Log.d(TAG,"GetDataTask started");
             List<Phone> phones = getData();
             return phones;
         }
@@ -73,12 +84,8 @@ public class MainActivity extends ActionBarActivity {
             super.onPostExecute(phones);
             ArrayAdapter<Phone> adapter = new PhoneAdapter(MainActivity.this, phones);
             mListView.setAdapter(adapter);
-            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    updateDetails(position);
-                }
-            });
+            FragmentManager fragmentManager = MainActivity.this.getSupportFragmentManager();
+            DetailFragment fragment = (DetailFragment) fragmentManager.findFragmentById(R.id.detail_fragment);
             if (fragment != null){
                 fragment.update(0);
             }
@@ -110,7 +117,7 @@ public class MainActivity extends ActionBarActivity {
             try {
                 JSONObject root = new JSONObject(data);
                 JSONArray arr = root.getJSONArray("phones");
-                List<Phone> phones = new LinkedList<Phone>();
+                List<Phone> phones = new ArrayList<>();
                 for (int i = 0; i < arr.length(); i++){
                     JSONObject jPhone = arr.getJSONObject(i);
                     String name = jPhone.getString("name");

@@ -3,5 +3,7 @@
     <string name="rating">Rating :</string>
     <string name="os">OS :</string>
     <string name="price">Price :</string>
+    <string name="main_activity_label">Phones</string>
+    <string name="details_activity_label">Phone Details</string>
 
 </resources>

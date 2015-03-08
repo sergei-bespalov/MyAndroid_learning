@@ -9,4 +9,5 @@
         android:name="sergei.bespalov.phonestabletversion.MainActivity$DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
 </LinearLayout>

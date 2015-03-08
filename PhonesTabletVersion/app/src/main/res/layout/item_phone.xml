@@ -9,6 +9,7 @@
         android:id="@+id/item_phone_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/primary_light"
         android:layout_marginTop="@dimen/item_top_marg"
         android:layout_marginBottom="@dimen/item_bot_marg"
         android:textSize="@dimen/item_text_size"

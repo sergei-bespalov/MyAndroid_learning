@@ -14,8 +14,8 @@ public class DetailActivity extends ActionBarActivity {
     public static final String TAG = "DetailActivity";
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         Log.d(TAG,"onCreate called");
         setContentView(R.layout.activity_detail);
         MainActivity.DetailFragment fragment = (MainActivity.DetailFragment) getSupportFragmentManager()

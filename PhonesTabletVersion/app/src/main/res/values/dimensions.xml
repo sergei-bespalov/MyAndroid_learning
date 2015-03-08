@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_left_pad">16dp</dimen>
+    <dimen name="list_right_pad">16dp</dimen>
+    <dimen name="list_top_pad">8dp</dimen>
+    <dimen name="list_bot_pad">8dp</dimen>
+    <dimen name="item_top_marg">16dp</dimen>
+    <dimen name="item_bot_marg">16dp</dimen>
+    <dimen name="item_text_size">22sp</dimen>
+    <dimen name="detail_title_top_pad">16dp</dimen>
+    <dimen name="detail_title_bot_pad">8dp</dimen>
+    <dimen name="detail_title_text_size">26sp</dimen>
+    <dimen name="detail_top_pad">8dp</dimen>
+    <dimen name="detail_bot_pad">8dp</dimen>
+    <dimen name="detail_left_pad">16dp</dimen>
+    <dimen name="detail_right_pad">16dp</dimen>
+    <dimen name="derail_text_size">14sp</dimen>
+</resources>

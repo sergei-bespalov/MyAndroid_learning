@@ -1,5 +1,6 @@
 package sergei.bespalov.phonestabletversion;
 
+import android.app.Fragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -83,5 +84,13 @@ public class MainActivity extends ActionBarActivity {
             }
             return null;
         }
+    }
+
+    public static class ListFragment extends Fragment{
+
+    }
+
+    public static class DetailFragment extends Fragment{
+
     }
 }

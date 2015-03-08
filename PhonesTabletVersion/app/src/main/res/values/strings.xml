@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PhonesTabletVersion</string>
+    <string name="rating">Rating :</string>
+    <string name="os">OS :</string>
+    <string name="price">Price :</string>
+
 </resources>

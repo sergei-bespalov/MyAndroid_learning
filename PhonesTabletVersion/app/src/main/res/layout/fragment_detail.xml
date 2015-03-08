@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/detail_bot_pad"
+    android:paddingRight="@dimen/detail_right_pad"
+    android:paddingTop="@dimen/detail_top_pad"
+    android:paddingLeft="@dimen/detail_left_pad"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/detail_title_text_size"
+        android:textStyle="bold"
+        tools:text="iPhone 10"/>
+    <TextView
+        android:id="@+id/detail_rating_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_title"
+        android:paddingTop="@dimen/detail_top_pad"
+        android:text="@string/rating"/>
+
+    <TextView
+        android:id="@+id/detail_rating_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_title"
+        android:layout_toRightOf="@id/detail_rating_label"
+        android:paddingTop="@dimen/detail_top_pad"
+        android:paddingLeft="@dimen/detail_left_pad"
+        tools:text="4.5"/>
+
+    <TextView
+        android:id="@+id/detail_os_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_rating_label"
+        android:paddingTop="@dimen/detail_top_pad"
+        android:text="@string/os"/>
+
+    <TextView
+        android:id="@+id/detail_os_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_rating_label"
+        android:layout_toRightOf="@id/detail_os_label"
+        android:paddingTop="@dimen/detail_top_pad"
+        android:paddingLeft="@dimen/detail_left_pad"
+        tools:text="Android"/>
+
+    <TextView
+        android:id="@+id/detail_price_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_os_label"
+        android:paddingTop="@dimen/detail_top_pad"
+        android:text="@string/price"/>
+
+    <TextView
+        android:id="@+id/detail_price_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_os_label"
+        android:layout_toRightOf="@id/detail_price_label"
+        android:paddingTop="@dimen/detail_top_pad"
+        android:paddingLeft="@dimen/detail_left_pad"
+        tools:text="1 000 000"/>
+
+
+</RelativeLayout>
